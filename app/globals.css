@@ -1,0 +1,174 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette to warm café tones with glassmorphism support */
+  --background: oklch(0.96 0.01 85); /* Soft Crema #f5f0e1 */
+  --foreground: oklch(0.35 0.02 45); /* Café #4b3c32 */
+  --card: oklch(1 0 0 / 0.8); /* Semi-transparent white for glassmorphism */
+  --card-foreground: oklch(0.35 0.02 45); /* Café for card text */
+  --popover: oklch(1 0 0 / 0.9); /* More opaque white for popovers */
+  --popover-foreground: oklch(0.35 0.02 45); /* Café for popover text */
+  --primary: oklch(0.45 0.03 50); /* Cacao #7d5b4a */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.8 0.01 75); /* Soft Beige #d1c6b2 */
+  --secondary-foreground: oklch(0.35 0.02 45); /* Café for secondary text */
+  --muted: oklch(0.96 0.01 85); /* Soft Crema for muted elements */
+  --muted-foreground: oklch(0.45 0.03 50); /* Cacao for muted text */
+  --accent: oklch(0.8 0.01 75); /* Soft Beige for accents */
+  --accent-foreground: oklch(0.35 0.02 45); /* Café for accent text */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.8 0.01 75); /* Soft Beige for borders */
+  --input: oklch(1 0 0); /* White for inputs */
+  --ring: oklch(0.35 0.02 45 / 0.5); /* Subtle café ring */
+  --chart-1: oklch(0.35 0.02 45); /* Café */
+  --chart-2: oklch(0.45 0.03 50); /* Cacao */
+  --chart-3: oklch(0.8 0.01 75); /* Soft Beige */
+  --chart-4: oklch(0.96 0.01 85); /* Soft Crema */
+  --chart-5: oklch(1 0 0); /* White */
+  --radius: 1rem; /* Increased for softer look */
+  --sidebar: oklch(1 0 0 / 0.9); /* Glassmorphism sidebar */
+  --sidebar-foreground: oklch(0.35 0.02 45);
+  --sidebar-primary: oklch(0.96 0.01 85);
+  --sidebar-primary-foreground: oklch(0.35 0.02 45);
+  --sidebar-accent: oklch(0.8 0.01 75);
+  --sidebar-accent-foreground: oklch(0.35 0.02 45);
+  --sidebar-border: oklch(0.8 0.01 75);
+  --sidebar-ring: oklch(0.35 0.02 45 / 0.5);
+}
+
+.dark {
+  /* Dark mode with warm café tones */
+  --background: oklch(0.15 0.01 45); /* Dark café */
+  --foreground: oklch(0.96 0.01 85); /* Soft crema text */
+  --card: oklch(0.2 0.01 45 / 0.8); /* Dark semi-transparent cards */
+  --card-foreground: oklch(0.96 0.01 85);
+  --popover: oklch(0.2 0.01 45 / 0.9);
+  --popover-foreground: oklch(0.96 0.01 85);
+  --primary: oklch(0.8 0.01 75); /* Soft beige as primary in dark */
+  --primary-foreground: oklch(0.15 0.01 45);
+  --secondary: oklch(0.25 0.01 45);
+  --secondary-foreground: oklch(0.96 0.01 85);
+  --muted: oklch(0.25 0.01 45);
+  --muted-foreground: oklch(0.7 0.01 75);
+  --accent: oklch(0.25 0.01 45);
+  --accent-foreground: oklch(0.96 0.01 85);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.25 0.01 45);
+  --input: oklch(0.25 0.01 45);
+  --ring: oklch(0.8 0.01 75 / 0.5);
+  --chart-1: oklch(0.8 0.01 75);
+  --chart-2: oklch(0.7 0.01 65);
+  --chart-3: oklch(0.6 0.01 55);
+  --chart-4: oklch(0.5 0.01 50);
+  --chart-5: oklch(0.4 0.01 45);
+  --sidebar: oklch(0.2 0.01 45 / 0.9);
+  --sidebar-foreground: oklch(0.96 0.01 85);
+  --sidebar-primary: oklch(0.8 0.01 75);
+  --sidebar-primary-foreground: oklch(0.15 0.01 45);
+  --sidebar-accent: oklch(0.25 0.01 45);
+  --sidebar-accent-foreground: oklch(0.96 0.01 85);
+  --sidebar-border: oklch(0.25 0.01 45);
+  --sidebar-ring: oklch(0.8 0.01 75 / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
