@@ -1,24 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { X } from "lucide-react"
-import type { CafeData } from "@/lib/cafe-data"
+import { useState } from "react";
+import { Card } from "@/components/ui/card";
+import { X } from "lucide-react";
+import type { CafeData } from "@/lib/cafe-data";
 
 interface GallerySectionProps {
-  data: CafeData
+  data: CafeData;
 }
 
 export function GallerySection({ data }: GallerySectionProps) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-foreground mb-4">Galería</h2>
+          <h2 className="font-playfair text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            Galería
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Un vistazo a nuestro ambiente acogedor y las deliciosas creaciones que preparamos con amor cada día.
+            Un vistazo a nuestro ambiente acogedor y las deliciosas creaciones
+            que preparamos con amor cada día.
           </p>
         </div>
 
@@ -35,7 +38,7 @@ export function GallerySection({ data }: GallerySectionProps) {
                 <img
                   src={image.url || "/placeholder.svg"}
                   alt={image.alt}
-                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center p-4">
@@ -50,7 +53,7 @@ export function GallerySection({ data }: GallerySectionProps) {
         {/* Modal for selected image */}
         {selectedImage && (
           <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-            <div className="relative max-w-4xl max-h-full">
+            <div className="relative max-w-4xl">
               <button
                 onClick={() => setSelectedImage(null)}
                 className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
@@ -60,12 +63,12 @@ export function GallerySection({ data }: GallerySectionProps) {
               <img
                 src={selectedImage || "/placeholder.svg"}
                 alt="Gallery image"
-                className="max-w-full max-h-full object-contain rounded-lg"
+                className="max-w-full max-h-[65vh] object-contain rounded-lg"
               />
             </div>
           </div>
         )}
       </div>
     </section>
-  )
+  );
 }
