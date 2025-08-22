@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   description:
     "Descubre nuestra selección de cafés premium, postres artesanales y la mejor experiencia cafetera de la ciudad.",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon/cafe.png",
+  },
 };
 
 export default function RootLayout({
