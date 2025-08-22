@@ -192,7 +192,7 @@ export default function LoginPage() {
                   Correo Electrónico
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-3 w-5 h-5 text-amber-700" />
+                  <Mail className="absolute left-3 top-2 w-5 h-5 text-amber-700" />
                   <Input
                     id="email"
                     name="email"
@@ -216,7 +216,7 @@ export default function LoginPage() {
                   Contraseña
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-3 w-5 h-5 text-amber-700" />
+                  <Lock className="absolute left-3 top-2 w-5 h-5 text-amber-700" />
                   <Input
                     id="password"
                     name="password"
@@ -294,7 +294,7 @@ export default function LoginPage() {
               </a>
             </div>
           */}
-          
+
             {/* Credenciales de prueba (solo para desarrollo) */}
             <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
               <p className="text-xs text-amber-800 font-medium mb-1">
